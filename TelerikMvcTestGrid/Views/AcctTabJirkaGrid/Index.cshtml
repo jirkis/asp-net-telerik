@@ -1,0 +1,47 @@
+﻿﻿﻿@(Html.Kendo().Grid<TelerikMvcTestGrid.Models.ACCT_TAB_JIRKA>()
+      .Name("grid")
+      .Columns(columns =>
+      {
+        columns.Bound(c => c.ABAL);
+        columns.Bound(c => c.AREST);
+        columns.Bound(c => c.AWDL_START);
+        columns.Bound(c => c.AWDL_LEN);
+        columns.Bound(c => c.AWDL_LMT);
+        columns.Bound(c => c.AWDL_TDY);
+        columns.Bound(c => c.TRN_DT);
+        columns.Bound(c => c.POS_START);
+        columns.Bound(c => c.POS_LEN);
+        columns.Bound(c => c.POS_LMT);
+        columns.Bound(c => c.POS_TDY);
+        columns.Bound(c => c.CURRENCY_TYPE);
+        columns.Bound(c => c.HOLD_AMOUNT);
+        columns.Bound(c => c.ACTUAL_BAL);
+        columns.Bound(c => c.LAST_UPDATE);
+        columns.Bound(c => c.ACCT_SEGMENT);
+        columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
+      })      
+      .ToolBar(toolbar => {
+            toolbar.Create();
+      }) 
+      .ColumnMenu()
+      .Editable(editable => editable.Mode(GridEditMode.PopUp))
+      .Pageable()
+      .Navigatable()
+      .Selectable(selectable => {
+            selectable.Mode(GridSelectionMode.Single);
+            selectable.Type(GridSelectionType.Row);
+      })
+      .Sortable(sortable => {
+          sortable.SortMode(GridSortMode.SingleColumn);
+      })
+      .Filterable()
+      .Scrollable()
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .Model(model => model.Id(p => p.AACCT))
+          .Read(read => read.Action("ACCT_TAB_JIRKA_Read", "AcctTabJirkaGrid"))
+          .Create(create => create.Action("ACCT_TAB_JIRKA_Create", "AcctTabJirkaGrid"))
+          .Update(update => update.Action("ACCT_TAB_JIRKA_Update", "AcctTabJirkaGrid"))
+          .Destroy(destroy => destroy.Action("ACCT_TAB_JIRKA_Destroy", "AcctTabJirkaGrid"))
+      )
+)
