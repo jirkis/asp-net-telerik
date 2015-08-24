@@ -43,7 +43,7 @@ namespace TelerikMvcTestGrid.Models
             [Display(Name = "Actual balance")]
             public Nullable<long> ACTUAL_BAL { get; set; }
             [Display(Name = "Last Update")]
-            [DataType(DataType.DateTime), DisplayFormat(DataFormatString = "{0:dd.MM.yyyy HH:mm:ss}", ApplyFormatInEditMode = true)]
+            [DataType(DataType.DateTime), DisplayFormat(DataFormatString = "{0:u}", ApplyFormatInEditMode = true)]
             public Nullable<System.DateTime> LAST_UPDATE { get; set; }
             [Display(Name = "Acct Segment")]
             public Nullable<int> ACCT_SEGMENT { get; set; }
