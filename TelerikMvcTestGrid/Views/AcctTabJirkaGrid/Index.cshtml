@@ -7,23 +7,24 @@
         columns.Bound(c => c.AWDL_START);
         columns.Bound(c => c.AWDL_LEN);
         columns.Bound(c => c.AWDL_LMT);
-        columns.Bound(c => c.AWDL_TDY);
-        columns.Bound(c => c.TRN_DT);
+        //columns.Bound(c => c.AWDL_TDY);
+        //columns.Bound(c => c.TRN_DT);
         columns.Bound(c => c.POS_START);
-        columns.Bound(c => c.POS_LEN);
-        columns.Bound(c => c.POS_LMT);
-        columns.Bound(c => c.POS_TDY);
+        //columns.Bound(c => c.POS_LEN);
+        //columns.Bound(c => c.POS_LMT);
+        //columns.Bound(c => c.POS_TDY);
         columns.Bound(c => c.CURRENCY_TYPE);
         columns.Bound(c => c.HOLD_AMOUNT);
         columns.Bound(c => c.ACTUAL_BAL);
         columns.Bound(c => c.LAST_UPDATE);
         columns.Bound(c => c.ACCT_SEGMENT);
-        columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
+        columns.Command(command => { command.Edit(); command.Destroy(); }).Width(280);
       })      
       .ToolBar(toolbar => {
             toolbar.Create();
       }) 
       .ColumnMenu()
+      .HtmlAttributes(new { style = "height: 500px" })
       .Editable(editable => editable.Mode(GridEditMode.PopUp))
       .Pageable()
       .Navigatable()

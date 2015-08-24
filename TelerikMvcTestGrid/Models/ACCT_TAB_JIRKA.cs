@@ -11,8 +11,7 @@ namespace TelerikMvcTestGrid.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;    
-    
+
     public partial class ACCT_TAB_JIRKA
     {
         public string AACCT { get; set; }
@@ -30,7 +29,6 @@ namespace TelerikMvcTestGrid.Models
         public int CURRENCY_TYPE { get; set; }
         public Nullable<long> HOLD_AMOUNT { get; set; }
         public Nullable<long> ACTUAL_BAL { get; set; }
-        [DataType(DataType.Date), DisplayFormat(DataFormatString = "{0:dd/MM/yyyy HH:mm:ss}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> LAST_UPDATE { get; set; }
         public Nullable<int> ACCT_SEGMENT { get; set; }
     }

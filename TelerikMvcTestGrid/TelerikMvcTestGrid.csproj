@@ -151,6 +151,7 @@
     <Compile Include="Models\ACCT_TAB_JIRKA.cs">
       <DependentUpon>TpiiEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Metadata\ACCT_TAB_JIRKA.metadata.cs" />
     <Compile Include="Models\OrderViewModel.cs" />
     <Compile Include="Models\TpiiEntities.Context.cs">
       <AutoGen>True</AutoGen>
